@@ -21,13 +21,22 @@ export default async function RootLayout({
   children: React.ReactNode
   params: PageProps['params']
 }>) {
-  const { locale } = await params
+  const { lang: locale } = await params
 
   return (
     <TranslationsProvider locale={locale}>
       <ThemeProvider attribute='class' enableSystem>
         <ThemeChanger />
-        <div className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}>{children}</div>
+        <div
+          style={{
+            background: 'var(--background)',
+            color: 'var(--foreground)',
+            fontFamily: 'Arial, Helvetica, sans-serif'
+          }}
+          className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
+        >
+          {children}
+        </div>
       </ThemeProvider>
     </TranslationsProvider>
   )

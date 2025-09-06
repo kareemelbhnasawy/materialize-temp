@@ -13,14 +13,14 @@ import { SearchInput } from '@/bookly/components/atoms/search-input/search-input
 import { BaseSelect } from '@/bookly/components/atoms/base-select/base-select.component'
 
 export default async function Home({ params }: PageProps) {
-  const { locale } = await params
-  const { t } = await initTranslations(locale, ['common'])
+  const { lang } = await params
+  const { t } = await initTranslations(lang, ['common'])
 
   const renderH1Component = <H1 stringProps={{ localeKey: 'headerTemp' }} i18nTFn={t} />
 
   return (
     <div className='flex flex-1 flex-col content-center items-center'>
-      <ExploreSection />
+      {/* <ExploreSection /> */}
 
       <H1
         stringProps={{

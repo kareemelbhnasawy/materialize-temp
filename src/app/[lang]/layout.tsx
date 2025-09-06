@@ -34,7 +34,7 @@ const RootLayout = ({ children, params }: ChildrenType & { params: { lang: Local
 
   return (
     <TranslationWrapper headersList={headersList} lang={params.lang}>
-      <html id='__next' lang={params.lang} dir={direction} suppressHydrationWarning>
+      <html lang={params.lang} dir={direction} suppressHydrationWarning>
         <body suppressHydrationWarning className='flex is-full min-bs-full flex-auto flex-col'>
           {children}
         </body>

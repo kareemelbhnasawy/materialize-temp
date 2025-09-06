@@ -6,7 +6,6 @@ const config: Config = {
     preflight: false
   },
   // Prefix all utilities so they don't collide with MUI styles
-  important: '#__next',
   // Tailwind v3: use class-based dark mode
   darkMode: ['class'],
   plugins: [require('tailwindcss-logical'), require('./src/@core/tailwind/plugin')],

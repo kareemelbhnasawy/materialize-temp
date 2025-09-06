@@ -14,33 +14,6 @@
   --text-color: #f70000;
 } */
 :root {
-  /* App tokens used by Tailwind (v3-compatible) */
-  --background: var(--white-100);
-  --foreground: var(--black-100);
-  --border: var(--black-800);
-  --input: var(--white-600);
-  --ring: var(--primary-500);
-
-  --primary-foreground: var(--white-100);
-  --secondary-foreground: var(--white-100);
-  --accent: var(--alternate-500);
-  --accent-foreground: var(--white-100);
-  --destructive-foreground: var(--white-100);
-  --muted: var(--white-700);
-  --muted-foreground: var(--black-300);
-
-  /* Type scale */
-  --font-size-base: 1rem; /* 16px base */
-  --font-scale: 1.12; /* Modular scale ratio */
-  --text-p: var(--font-size-base);
-  --text-h6: calc(var(--text-p) * var(--font-scale));
-  --text-h5: calc(var(--text-h6) * var(--font-scale));
-  --text-h4: calc(var(--text-h5) * var(--font-scale));
-  --text-h3: calc(var(--text-h4) * var(--font-scale));
-  --text-h2: calc(var(--text-h3) * var(--font-scale));
-  --text-h1: calc(var(--text-h2) * var(--font-scale));
-  --text-small: calc(var(--text-p) / var(--font-scale));
-
   /* Primary */
   --primary-100: #bbdefb;
   --primary-200: #90caf9;
@@ -130,14 +103,7 @@
   --black-900: #999999;
 }
 
-[class='dark'] {
-  /* Flip high-level tokens for dark mode */
-  --background: var(--black-100);
-  --foreground: var(--white-100);
-  --border: var(--white-700);
-  --input: var(--black-300);
-  --ring: var(--primary-500);
-
+.dark {
   --primary-100: #0d47a1;
   --primary-200: #1565c0;
   --primary-300: #1976d2;

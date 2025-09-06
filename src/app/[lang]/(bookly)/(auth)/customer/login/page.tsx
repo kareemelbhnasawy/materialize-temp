@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
 export default async function LoginPage({ params }: PageProps) {
-  const { locale } = params
+  const { lang: locale } = params
 
   return (
     <main className='min-h-screen flex flex-col items-center justify-center p-4 relative'>
