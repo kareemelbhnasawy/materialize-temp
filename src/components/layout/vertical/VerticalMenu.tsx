@@ -86,13 +86,14 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
           icon={<i className='ri-home-smile-line' />}
           suffix={<Chip label='5' size='small' color='error' />}
         >
-          <MenuItem href={`/${locale}/dashboards/crm`}>{dictionary['navigation'].crm}</MenuItem>
+          <MenuItem href={`/${locale}/apps/bookly/dashboard`}>{dictionary['navigation'].bookly}</MenuItem>
+          {/* <MenuItem href={`/${locale}/dashboards/crm`}>{dictionary['navigation'].crm}</MenuItem>
           <MenuItem href={`/${locale}/dashboards/analytics`}>{dictionary['navigation'].analytics}</MenuItem>
           <MenuItem href={`/${locale}/dashboards/ecommerce`}>{dictionary['navigation'].eCommerce}</MenuItem>
           <MenuItem href={`/${locale}/dashboards/academy`}>{dictionary['navigation'].academy}</MenuItem>
-          <MenuItem href={`/${locale}/dashboards/logistics`}>{dictionary['navigation'].logistics}</MenuItem>
+          <MenuItem href={`/${locale}/dashboards/logistics`}>{dictionary['navigation'].logistics}</MenuItem> */}
         </SubMenu>
-        <SubMenu label={dictionary['navigation'].frontPages} icon={<i className='ri-file-copy-line' />}>
+        {/* <SubMenu label={dictionary['navigation'].frontPages} icon={<i className='ri-file-copy-line' />}>
           <MenuItem href='/front-pages/landing-page' target='_blank'>
             {dictionary['navigation'].landing}
           </MenuItem>
@@ -108,9 +109,9 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
           <MenuItem href='/front-pages/help-center' target='_blank'>
             {dictionary['navigation'].helpCenter}
           </MenuItem>
-        </SubMenu>
+        </SubMenu> */}
         <MenuSection label={dictionary['navigation'].appsPages}>
-          <SubMenu label={dictionary['navigation'].eCommerce} icon={<i className='ri-shopping-bag-3-line' />}>
+          {/* <SubMenu label={dictionary['navigation'].eCommerce} icon={<i className='ri-shopping-bag-3-line' />}>
             <MenuItem href={`/${locale}/apps/ecommerce/dashboard`}>{dictionary['navigation'].dashboard}</MenuItem>
             <SubMenu label={dictionary['navigation'].products}>
               <MenuItem href={`/${locale}/apps/ecommerce/products/list`}>{dictionary['navigation'].list}</MenuItem>
@@ -144,8 +145,25 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
             </MenuItem>
             <MenuItem href={`/${locale}/apps/ecommerce/referrals`}>{dictionary['navigation'].referrals}</MenuItem>
             <MenuItem href={`/${locale}/apps/ecommerce/settings`}>{dictionary['navigation'].settings}</MenuItem>
+          </SubMenu> */}
+          <SubMenu label={dictionary['navigation'].bookly ?? 'Bookly'} icon={<i className='ri-scissors-2-line' />}>
+            <MenuItem href={`/${locale}/apps/bookly/dashboard`}>{dictionary['navigation'].dashboard}</MenuItem>
+            <MenuItem href={`/${locale}/apps/bookly/businesses`}>
+              {dictionary['navigation'].businesses ?? 'Businesses'}
+            </MenuItem>
+            <MenuItem href={`/${locale}/apps/bookly/services`}>
+              {dictionary['navigation'].services ?? 'Services'}
+            </MenuItem>
+            <MenuItem href={`/${locale}/apps/bookly/categories`}>
+              {dictionary['navigation'].categories ?? 'Categories'}
+            </MenuItem>
+            <MenuItem href={`/${locale}/apps/bookly/bookings`}>
+              {dictionary['navigation'].bookings ?? 'Bookings'}
+            </MenuItem>
+            <MenuItem href={`/${locale}/apps/bookly/staff`}>{dictionary['navigation'].staff ?? 'Staff'}</MenuItem>
+            <MenuItem href={`/${locale}/apps/bookly/reviews`}>{dictionary['navigation'].reviews ?? 'Reviews'}</MenuItem>
           </SubMenu>
-          <SubMenu label={dictionary['navigation'].academy} icon={<i className='ri-graduation-cap-line' />}>
+          {/* <SubMenu label={dictionary['navigation'].academy} icon={<i className='ri-graduation-cap-line' />}>
             <MenuItem href={`/${locale}/apps/academy/dashboard`}>{dictionary['navigation'].dashboard}</MenuItem>
             <MenuItem href={`/${locale}/apps/academy/my-courses`}>{dictionary['navigation'].myCourses}</MenuItem>
             <MenuItem href={`/${locale}/apps/academy/course-details`}>
@@ -155,7 +173,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
           <SubMenu label={dictionary['navigation'].logistics} icon={<i className='ri-car-line' />}>
             <MenuItem href={`/${locale}/apps/logistics/dashboard`}>{dictionary['navigation'].dashboard}</MenuItem>
             <MenuItem href={`/${locale}/apps/logistics/fleet`}>{dictionary['navigation'].fleet}</MenuItem>
-          </SubMenu>
+          </SubMenu> */}
           <MenuItem
             href={`/${locale}/apps/email`}
             icon={<i className='ri-mail-open-line' />}

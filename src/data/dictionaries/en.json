@@ -101,6 +101,13 @@
     "menuLevels": "Menu Levels",
     "menuLevel2": "Menu Level 2",
     "menuLevel3": "Menu Level 3",
-    "disabledMenu": "Disabled Menu"
+    "disabledMenu": "Disabled Menu",
+    "bookly": "Bookly",
+    "businesses": "Businesses",
+    "services": "Services",
+    "categories": "Categories",
+    "bookings": "Bookings",
+    "staff": "Staff",
+    "reviews": "Reviews"
   }
 }

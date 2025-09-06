@@ -101,6 +101,13 @@
     "menuLevels": "مستويات القائمة",
     "menuLevel2": "مستوى القائمة 2",
     "menuLevel3": "مستوى القائمة 3",
-    "disabledMenu": "قائمة المعوقين"
+    "disabledMenu": "قائمة المعوقين",
+    "bookly": "بوكلي",
+    "businesses": "الأنشطة التجارية",
+    "services": "الخدمات",
+    "categories": "الفئات",
+    "bookings": "الحجوزات",
+    "staff": "الموظفون",
+    "reviews": "المراجعات"
   }
 }

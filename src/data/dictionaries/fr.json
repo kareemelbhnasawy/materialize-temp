@@ -101,6 +101,13 @@
     "menuLevels": "Niveaux de menus",
     "menuLevel2": "Niveau menu 2",
     "menuLevel3": "Niveau menu 3",
-    "disabledMenu": "Menu désactivé"
+    "disabledMenu": "Menu désactivé",
+    "bookly": "Bookly",
+    "businesses": "Entreprises",
+    "services": "Services",
+    "categories": "Catégories",
+    "bookings": "Réservations",
+    "staff": "Personnel",
+    "reviews": "Avis"
   }
 }
