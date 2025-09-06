@@ -28,6 +28,9 @@
       "@/*": [
         "./src/*"
       ],
+      "@/bookly/*": [
+        "./src/bookly/*"
+      ],
       "@core/*": [
         "./src/@core/*"
       ],

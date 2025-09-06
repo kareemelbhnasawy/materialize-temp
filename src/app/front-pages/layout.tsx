@@ -35,8 +35,8 @@ const Layout = ({ children }: ChildrenType) => {
   const systemMode = getSystemMode()
 
   return (
-    <html id='__next'>
-      <body className='flex is-full min-bs-full flex-auto flex-col'>
+    <html id='__next' suppressHydrationWarning>
+      <body suppressHydrationWarning className='flex is-full min-bs-full flex-auto flex-col'>
         <Providers direction='ltr'>
           <BlankLayout systemMode={systemMode}>
             <IntersectionProvider>
