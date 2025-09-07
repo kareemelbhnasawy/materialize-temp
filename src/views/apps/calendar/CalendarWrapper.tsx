@@ -20,11 +20,10 @@ import AddEventSidebar from './AddEventSidebar'
 
 // CalendarColors Object
 const calendarsColor: CalendarColors = {
-  Personal: 'error',
-  Business: 'primary',
-  Family: 'warning',
-  Holiday: 'success',
-  ETC: 'info'
+  confirmed: 'primary',
+  pending: 'info',
+  cancelled: 'error',
+  completed: 'success'
 }
 
 const AppCalendar = () => {

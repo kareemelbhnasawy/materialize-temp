@@ -41,7 +41,7 @@ const SidebarLeft = (props: SidebarLeftProps) => {
           <FormControlLabel
             className='mbe-1'
             key={key}
-            label={key}
+            label={key.charAt(0).toUpperCase() + key.slice(1)}
             control={
               <Checkbox
                 color={value as ThemeColor}

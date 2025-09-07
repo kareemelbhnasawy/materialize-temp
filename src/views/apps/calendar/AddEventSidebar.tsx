@@ -48,9 +48,6 @@ interface DefaultStateType {
   guests: string[] | undefined
 }
 
-// Vars
-const capitalize = (string: string) => string && string[0].toUpperCase() + string.slice(1)
-
 const defaultState: DefaultStateType = {
   url: '',
   title: '',
@@ -58,7 +55,7 @@ const defaultState: DefaultStateType = {
   allDay: true,
   description: '',
   endDate: new Date(),
-  calendar: 'Business',
+  calendar: 'confirmed',
   startDate: new Date()
 }
 
@@ -104,7 +101,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
         allDay: event.allDay,
         guests: event.extendedProps.guests || [],
         description: event.extendedProps.description || '',
-        calendar: event.extendedProps.calendar || 'Business',
+        calendar: event.extendedProps.calendar || 'confirmed',
         endDate: event.end !== null ? event.end : event.start,
         startDate: event.start !== null ? event.start : new Date()
       })
@@ -132,7 +129,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
       allDay: values.allDay,
       start: values.startDate,
       extendedProps: {
-        calendar: capitalize(values.calendar),
+        calendar: values.calendar,
         guests: values.guests && values.guests.length ? values.guests : undefined,
         description: values.description.length ? values.description : undefined
       }
@@ -264,11 +261,10 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
                 labelId='event-calendar'
                 onChange={e => setValues({ ...values, calendar: e.target.value })}
               >
-                <MenuItem value='Personal'>Personal</MenuItem>
-                <MenuItem value='Business'>Business</MenuItem>
-                <MenuItem value='Family'>Family</MenuItem>
-                <MenuItem value='Holiday'>Holiday</MenuItem>
-                <MenuItem value='ETC'>ETC</MenuItem>
+                <MenuItem value='confirmed'>Confirmed</MenuItem>
+                <MenuItem value='pending'>Pending</MenuItem>
+                <MenuItem value='cancelled'>Cancelled</MenuItem>
+                <MenuItem value='completed'>Completed</MenuItem>
               </Select>
             </FormControl>
             <div className='mbe-5'>

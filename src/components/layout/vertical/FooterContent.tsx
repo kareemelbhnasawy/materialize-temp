@@ -23,17 +23,18 @@ const FooterContent = () => {
       <p>
         <span className='text-textSecondary'>{`© ${new Date().getFullYear()}, Made with `}</span>
         <span>{`❤️`}</span>
-        <span className='text-textSecondary'>{` by `}</span>
-        <Link href='https://pixinvent.com' target='_blank' className='text-primary capitalize'>
-          Pixinvent
+        <span className='text-textSecondary'>{` For `}</span>
+        <Link href='https://bookly.com' target='_blank' className='text-primary capitalize'>
+          Bookly
         </Link>
       </p>
       {!isBreakpointReached && (
         <div className='flex items-center gap-4'>
-          <Link href='https://themeforest.net/licenses/standard' target='_blank' className='text-primary'>
+          {/* Todo: to be changed to bookly license etc.. */}
+          <Link href='https://bookly.com/license' target='_blank' className='text-primary'>
             License
           </Link>
-          <Link href='https://themeforest.net/user/pixinvent/portfolio' target='_blank' className='text-primary'>
+          {/* <Link href='https://themeforest.net/user/pixinvent/portfolio' target='_blank' className='text-primary'>
             More Themes
           </Link>
           <Link
@@ -42,8 +43,8 @@ const FooterContent = () => {
             className='text-primary'
           >
             Documentation
-          </Link>
-          <Link href='https://pixinvent.ticksy.com' target='_blank' className='text-primary'>
+          </Link> */}
+          <Link href='https://bookly.com/support' target='_blank' className='text-primary'>
             Support
           </Link>
         </div>

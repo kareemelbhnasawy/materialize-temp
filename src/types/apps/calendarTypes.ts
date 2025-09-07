@@ -5,14 +5,13 @@ import type { EventInput } from '@fullcalendar/core'
 // Type Imports
 import type { ThemeColor } from '@core/types'
 
-export type CalendarFiltersType = 'Personal' | 'Business' | 'Family' | 'Holiday' | 'ETC'
+export type CalendarFiltersType = 'confirmed' | 'pending' | 'cancelled' | 'completed'
 
 export type CalendarColors = {
-  ETC: ThemeColor
-  Family: ThemeColor
-  Holiday: ThemeColor
-  Personal: ThemeColor
-  Business: ThemeColor
+  confirmed: ThemeColor
+  pending: ThemeColor
+  cancelled: ThemeColor
+  completed: ThemeColor
 }
 
 export type CalendarType = {

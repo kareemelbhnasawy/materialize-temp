@@ -1,125 +1,33 @@
 // Third-party Imports
 import type { EventInput } from '@fullcalendar/core'
 
-// Vars
-const date = new Date()
-const nextDay = new Date(date.getTime() + 24 * 60 * 60 * 1000)
+// Data Imports
+import { mockBookings } from '@/bookly/data/mock-data'
 
-const nextMonth =
-  date.getMonth() === 11 ? new Date(date.getFullYear() + 1, 0, 1) : new Date(date.getFullYear(), date.getMonth() + 1, 1)
+const parseTime = (date: Date, time: string) => {
+  const [timePart, period] = time.split(' ')
+  const [hourStr, minuteStr] = timePart.split(':')
+  let hour = parseInt(hourStr, 10)
+  const minute = parseInt(minuteStr, 10)
+  if (period === 'PM' && hour !== 12) hour += 12
+  if (period === 'AM' && hour === 12) hour = 0
+  const result = new Date(date)
+  result.setHours(hour, minute, 0, 0)
+  return result
+}
 
-const prevMonth =
-  date.getMonth() === 11 ? new Date(date.getFullYear() - 1, 0, 1) : new Date(date.getFullYear(), date.getMonth() - 1, 1)
-
-export const events: EventInput[] = [
-  {
-    id: '1',
+export const events: EventInput[] = mockBookings.map((booking, index) => {
+  const start = parseTime(booking.date, booking.time)
+  const end = new Date(start.getTime() + booking.duration * 60000)
+  return {
+    id: `${index + 1}`,
     url: '',
-    title: 'Design Review',
-    start: date,
-    end: nextDay,
+    title: booking.serviceName,
+    start,
+    end,
     allDay: false,
     extendedProps: {
-      calendar: 'Business'
-    }
-  },
-  {
-    id: '2',
-    url: '',
-    title: 'Meeting With Client',
-    start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
-    end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
-    allDay: true,
-    extendedProps: {
-      calendar: 'Business'
-    }
-  },
-  {
-    id: '3',
-    url: '',
-    title: 'Family Trip',
-    allDay: true,
-    start: new Date(date.getFullYear(), date.getMonth() + 1, -9),
-    end: new Date(date.getFullYear(), date.getMonth() + 1, -7),
-    extendedProps: {
-      calendar: 'Holiday'
-    }
-  },
-  {
-    id: '4',
-    url: '',
-    title: "Doctor's Appointment",
-    start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
-    end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
-    allDay: true,
-    extendedProps: {
-      calendar: 'Personal'
-    }
-  },
-  {
-    id: '5',
-    url: '',
-    title: 'Dart Game?',
-    start: new Date(date.getFullYear(), date.getMonth() + 1, -13),
-    end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
-    allDay: true,
-    extendedProps: {
-      calendar: 'ETC'
-    }
-  },
-  {
-    id: '6',
-    url: '',
-    title: 'Meditation',
-    start: new Date(date.getFullYear(), date.getMonth() + 1, -13),
-    end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
-    allDay: true,
-    extendedProps: {
-      calendar: 'Personal'
-    }
-  },
-  {
-    id: '7',
-    url: '',
-    title: 'Dinner',
-    start: new Date(date.getFullYear(), date.getMonth() + 1, -13),
-    end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
-    allDay: true,
-    extendedProps: {
-      calendar: 'Family'
-    }
-  },
-  {
-    id: '8',
-    url: '',
-    title: 'Product Review',
-    start: new Date(date.getFullYear(), date.getMonth() + 1, -13),
-    end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
-    allDay: true,
-    extendedProps: {
-      calendar: 'Business'
-    }
-  },
-  {
-    id: '9',
-    url: '',
-    title: 'Monthly Meeting',
-    start: nextMonth,
-    end: nextMonth,
-    allDay: true,
-    extendedProps: {
-      calendar: 'Business'
-    }
-  },
-  {
-    id: '10',
-    url: '',
-    title: 'Monthly Checkup',
-    start: prevMonth,
-    end: prevMonth,
-    allDay: true,
-    extendedProps: {
-      calendar: 'Personal'
+      calendar: booking.status
     }
   }
-]
+})
