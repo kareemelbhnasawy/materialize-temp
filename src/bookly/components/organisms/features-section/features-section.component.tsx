@@ -28,7 +28,7 @@ export const FeaturesSection = () => {
             <BusinessCard
               key={business.id}
               business={business}
-              className='bg-white rounded-lg shadow-md overflow-hidden border-none'
+              className='bg-white rounded-2xl shadow-md overflow-hidden border-none'
               onClick={() => handleBusinessClick(business.id)}
             />
           ))}

@@ -9,7 +9,6 @@ import FooterSection from '@/bookly/components/organisms/footer-section/footer-s
 import { t } from 'i18next'
 import { MapPin } from 'lucide-react'
 import { useState } from 'react'
-import { is } from 'zod/v4/locales'
 
 function LandPage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -58,7 +57,7 @@ function LandPage() {
 
       <main>
         {/* Hero Section */}
-        <section className='relative bg-gray-100 py-20'>
+        <section className='relative var(--foreground) py-20'>
           <div
             className='absolute inset-0 bg-cover bg-center opacity-20'
             style={{
@@ -73,7 +72,7 @@ function LandPage() {
               className='text-4xl text-center md:text-5xl font-bold text-gray-900 mb-8'
             />
             {/* Search Bar */}
-            <div className='px-8 py-6 max-w-full mx-auto flex flex-col md:flex-row  bg-white rounded-lg shadow-lg overflow-hidden gap-4'>
+            <div className='px-8 py-6 max-w-full mx-auto flex flex-col md:flex-row  bg-white rounded-2xl shadow-lg overflow-hidden gap-4'>
               <SearchInput
                 placeholderProps={{
                   plainText: 'e.g. haircut, facial, massage'
@@ -94,7 +93,7 @@ function LandPage() {
         </section>
 
         {/* Categories Section */}
-        <div className='bg-gray-50'>
+        <div className='var(--background)'>
           <ExploreSection />
         </div>
 

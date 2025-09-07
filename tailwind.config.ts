@@ -18,6 +18,15 @@ const config: Config = {
         border: 'var(--border)',
         input: 'var(--input)',
         ring: 'var(--ring)',
+        // Add missing tokens used by components
+        card: {
+          DEFAULT: 'var(--background)',
+          foreground: 'var(--foreground)'
+        },
+        popover: {
+          DEFAULT: 'var(--background)',
+          foreground: 'var(--foreground)'
+        },
 
         primary: {
           DEFAULT: 'var(--primary-500)',
